@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block body %}
+{% load static %}
+
+<main id="main">
+<form action = "#" method ="post" enctype="multipart/form-data">
+    <div class = "registration">
+        <P>
+        <center>Регистрация</center>
+        </P>
+        </br>
+         {{form.as_p}}
+
+         {% csrf_token %}
+        <div>
+        <button class="buttonlogin"> Отправить </button>
+        </div>
+    </div>
+</form>
+{% endblock %}

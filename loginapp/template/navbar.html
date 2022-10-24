@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pikabu</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'C:\Users\Евгений\Desktop\Pikabu-MainVersion\static\css\styles.css' %}">
+</head>
+<body>
+<header id="header">
+	<div class="container d-flex justify-content-between align-items-center">
+		<div class="logo">
+			<a href="/pikabu/">
+				<img src="{% static 'C:\Users\Евгений\Desktop\Pikabu-MainVersion\static\media\pikabu.png' %}"  width="117" height="26" alt="logo">
+			</a>
+		</div>
+		<!-- /.logo -->
+		<nav class="header-nav">
+			<a href="#">Горячее</a>
+			<a href="#">Лучшее</a>
+			<a href="#">Свежее</a>
+			<a href="#">Подписки</a>
+			<a href="#">Сообщества</a>
+			<a href="#">Компании</a>
+			<form class ="button">
+				<input class="input1" type="text" placeholder="Искать здесь..." rel="stylesheet">
+				<button type="submit"> </button>
+			</form>
+
+		</nav>
+		<!-- kabinet -->
+		<div class="kabinet">
+			<a href="/pikabu/mainframe/">
+				<img src="{% static 'C:\Users\Евгений\Desktop\Pikabu-MainVersion\static\media\lk.png' %}" width="36" height="30" alt="kabinet">
+			</a>
+		</div>
+
+			{% if request.user.is_authenticated %}
+			<li class="Log"> {{user.username}} | <a href="/pikabu/logout/">Выйти</a></li>
+			{% else %}
+			<li class="Log"><a href="/pikabu/register/">Регистрация</a> | <a href="/pikabu/login/">Войти</a></li>
+			{% endif %}
+		<!-- /.header-nav -->
+	</div>
+	<!-- /.container -->
+</header>
+<!-- /#header -->
+
+	</main>
+	<!-- /#main -->
+</html>
